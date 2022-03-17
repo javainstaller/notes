@@ -16,7 +16,7 @@ SET @var_name = expr [, @var_name = expr] ...
 ## Pivot Tables in SQL 
 - The following is based on [this problem](https://www.hackerrank.com/challenges/occupations/problem).
 
-Step 1: Create CASE to print out all data according to occupation 
+**Step 1: Create CASE to print out all data according to occupation**
 ```
 SELECT
     case when Occupation='Doctor' then Name end as Doctor,
@@ -26,7 +26,7 @@ SELECT
 FROM OCCUPATIONS
 ```
 
-Step 2: Create CASE to print out row numbers corresponding to non-NULL values
+**Step 2: Create CASE to print out row numbers corresponding to non-NULL values**
 ```
 set @r1=0, @r2=0, @r3=0, @r4=0;
 
@@ -39,7 +39,7 @@ SELECT case
 FROM OCCUPATIONS
 ```
 
-Step 3: Combine results from Step 1 and Step 2
+**Step 3: Combine results from Step 1 and Step 2**
 ```
 set @r1=0, @r2=0, @r3=0, @r4=0;
 
@@ -56,7 +56,7 @@ SELECT case
 FROM OCCUPATIONS
 ```
 
-Step 4: Determine the first non-NULL value in each column with MIN/MAX
+**Step 4: Determine the first non-NULL value in each column with MIN/MAX**
 ```
 set @r1=0, @r2=0, @r3=0, @r4=0;
 select min(Doctor), min(Professor), min(Singer), min(Actor)
